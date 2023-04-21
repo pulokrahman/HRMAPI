@@ -42,7 +42,7 @@ namespace HRMAPI.Utility
     {
         public static IApplicationBuilder UseMiddlewareExtension(this IApplicationBuilder builder)
         {
-            var app = builder.Build();
+          //  var app = builder.Build();
             return builder.UseMiddleware<MiddlewareExtension>();
         }
     }
