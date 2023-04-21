@@ -24,18 +24,18 @@ namespace HRMAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCandidates()
         {
-            try
-            {
+           // try
+           // {
                 var cand = await candidateService.GetAllCandidates();
             
                     return Ok(cand);
-            }
-            catch
-            { //BadRequest();
+            //}
+           // catch
+           // { //BadRequest();
               //404 if not found
-                return NotFound();
+         //       return NotFound();
                 //return Ok();
-            }
+       //     }
 
 
         }
@@ -43,58 +43,58 @@ namespace HRMAPI.Controllers
         [Route("FindSingle/{id}")]
         public async Task<IActionResult> FindSingleCandidate(int id)
         {
-            try
-            {
+           // try
+            //{
                 var can=await candidateService.GetCandidateByIdAsync(id);
                 return Ok(can);
-            }
-            catch
-            {
-                return NotFound();
-            }
+           // }
+            //catch
+            //{
+              //  return NotFound();
+           // }
         }
 
         [HttpPost]
         public async Task<IActionResult> AddCandidate(CandidateRequestModel can)
         {
-            try
-            {
+         //   try
+           // {
                 await candidateService.AddCandidateAsync(can);
                 return Ok(can);
-            }
-            catch
-            {
-                return NotFound();
-            }
+            //}
+            //catch
+            //{
+              //  return NotFound();
+           // }
         }
         [HttpPost]
         [Route("Delete/{id}")]
         public async Task<IActionResult> DeleteCandidate(int id)
         {
-            try
-            {
-                await candidateService.DeleteCandidateAsync(id);
-                return Ok();
-            }
-            catch
-            {
-                return NotFound();
-            }
+            //try
+           // {
+               await candidateService.DeleteCandidateAsync(id);
+               return Ok();
+            //}
+            //catch
+           // {
+             //   return NotFound();
+            //}
 
 
         }
         [HttpPut]
         public async Task<IActionResult> UpdateCandidate(CandidateRequestModel can)
            {
-            try
-            {
+            //try
+           // {
                 await candidateService.UpdateCandidateAsync(can);
                 return Ok();
-            }
-            catch
-            {
-                return NotFound();
-            }
+            //}
+           // catch
+            //{
+              //  return NotFound();
+           // }
         }
 
     }
